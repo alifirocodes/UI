@@ -134,12 +134,64 @@
 
         /* Create post*/
         .create-post {
-            width: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
             height: 200px;
+            margin: 24px;
             background: white;
             border-radius: 14px;
             justify-items: center;
-            align-content: center;
+            gap: 24px;
+        }
+
+        .user-detail {
+            display: flex;
+            width: 700px;
+            align-items: center;
+            padding-left: 24px;
+            gap: 14px;
+        }
+
+        img.pfp-pic {
+            width: 50px;
+            height: auto;
+            border-radius: 100px;
+        }
+
+        .post-details {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: auto;
+        }
+
+        .username {
+            font-size: large;
+            font-weight: bold;
+        }
+
+        .post-dates {
+            font-size: smaller;
+            color: #90929C;
+        }
+
+        .input {
+            width: 700px;
+            height: 60px;
+            border-bottom: inset;
+        }
+
+        .input-form {
+            color: #90929C;
+            display: flex;
+            padding-left: 24px;
+            align-items: center;
+            background: ghostwhite;
+            height: 40px;
+            border-radius: 24px;
         }
 
         .post, .comment {
@@ -218,15 +270,15 @@
         <div class="create-post">
             <div class="user-detail">
                 <div class="pfp">
-                    <img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\profile-pic.png">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\pfp-pic.jpg" class="pfp-pic">
                 </div>
-                <div post-details>
+                <div class="post-details">
                     <div class="username">Xiamao MEOW</div>
-                    <div class="post-details">February 14 at 12:01 AM</div>
+                    <div class="post-dates">February 14 at 12:01 AM</div>
                 </div>
             </div>
             <div class="input">
-                <div>What's on your mind?</div>
+                <div class="input-form">What's on your mind?</div>
             </div>
         </div>
 
