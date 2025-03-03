@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main App</title>
-    {% load static %}
+    <!--{% load static %}-->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <style>
         body {
@@ -12,44 +12,136 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-        }
+            display: flex;
+            flex-direction: column;
+        }     
+        
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
+        /*
         header {
-            background: Orange; <!--#333;-->
+            background: 00B2FF;
             color: #fff;
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #77aaff 3px solid;
+            display: flex;
+            flex-direction: row;
         }
+
+        header li {
+            float: left;
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        */
+
+        /* Navbar */
+
+        header {
+            background: #00B2FF;
+            color: #fff;
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: 80px;
+            box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .container.container-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
         header a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
         }
+
         header ul {
             padding: 0;
             list-style: none;
         }
+
         header li {
             float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
+            display: flex;
+            padding: 0 8px 0 8px;
+            font-size: larger;
         }
+
+        /* Header - left */
+        
+        div#branding {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        }
+
+        img.logo {
+        width: 15%;
+        height: auto;
+        }
+
         header #branding {
             float: left;
         }
         header #branding h1 {
             margin: 0;
         }
+
+        /* Header - right */
         header nav {
             float: right;
-            margin-top: 10px;
         }
+
+        ul.nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        li.pfp {
+            display: flex;
+            justify-content: center;
+        }
+
+        img.pfp {
+            width: 65%;
+            height: auto;
+        }
+
+        img.divider {
+            width: 70%;
+            height: auto;
+        }
+
+        img.logout {
+            width: 85%;
+            height: auto;
+        }
+
+        /* Create post*/
+        .create-post {
+            width: 1000px;
+            height: 200px;
+            background: white;
+            border-radius: 14px;
+            justify-items: center;
+            align-content: center;
+        }
+
         .post, .comment {
             background: #fff;
             padding: 20px;
@@ -96,20 +188,49 @@
     </style>
 </head>
 <body>
+    <!--NAVBAR-->
     <header>
-        <div class="container">
+        <div class="container container-nav" >
+            
+            <!--LEFT NAVBAR-->
             <div id="branding">
-                <h1>Connectly_G9</h1>
+                <img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\connectly-logo.png" class="logo">
+                <h1>Connectly</h1>
             </div>
+            
+            <!--RIGHT NAVBAR-->
             <nav>
-                <ul>
-                    <li>Welcome, {{ user.username }}!</li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                <ul class="nav">
+                    <!--<li>{{ user.username }}!</li>-->
+                    <li>Amy Stake</li>
+                    <li class="pfp"><img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\profile-pic.png" class="pfp"></li>
+                    <li class="divider"><img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\divider.png" class="divider"></li>
+                    <li><a href="{% url 'logout' %}"><img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\logout.png" class="logout"></a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
+
+
     <div class="container">
+        <!--TOP POST-->
+        <div class="create-post">
+            <div class="user-detail">
+                <div class="pfp">
+                    <img src="C:\Users\Rhynne Gracelle\CHERRY\IPT\posts\static\Images\profile-pic.png">
+                </div>
+                <div post-details>
+                    <div class="username">Xiamao MEOW</div>
+                    <div class="post-details">February 14 at 12:01 AM</div>
+                </div>
+            </div>
+            <div class="input">
+                <div>What's on your mind?</div>
+            </div>
+        </div>
+
+
         <div class="post-form">
             <h2>Create a Post</h2>
             <form method="POST" enctype="multipart/form-data">
