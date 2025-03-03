@@ -194,6 +194,87 @@
             border-radius: 24px;
         }
 
+        .comments {
+            width: 700px;
+            height: 60px;
+            border-bottom: inset;
+        }
+
+        .comments-text {
+            color: #90929C;
+            display: flex;
+            padding-left: 24px;
+            align-items: center;
+            background: ghostwhite;
+            height: 40px;
+            border-radius: 24px;
+        }
+
+        /* Divider - Posts */
+
+        .subtitle {
+            width: 800px;
+            font-size: x-large;
+            font-weight: 600;
+        }
+
+        /* Other User Posts */
+        .other-user-p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 800px;
+            height: 260px;
+            margin-top: 18px;
+            background: white;
+            border-radius: 14px;
+            justify-items: center;
+            gap: 20px;
+        }
+
+        .content {
+            font-size: large;
+            width: 700px;
+            padding-left: 24px;
+        }
+
+        .interactions {
+            color: #90929C;
+            font-size: medium;
+            display: flex;
+            flex-direction: row;
+            width: 700px;
+            justify-content: space-around;
+            align-self: center;
+            border-top-style: outset;
+            border-bottom-style: inset;
+            padding: 8px;
+        }
+
+        img.interactions-img {
+            width: 20px;
+            height: auto;
+        }
+
+        .like,
+        .comment {
+            display: flex;
+            flex-direction: row;
+            height: 20px;
+            gap: 4px;
+        }
+
+        .comments-tab {
+            width: 700px;
+        }
+        
+
+        
+        
+
+        /* OSIAS CSS*/
+        /*
         .post, .comment {
             background: #fff;
             padding: 20px;
@@ -237,6 +318,7 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        */
     </style>
 </head>
 <body>
@@ -282,7 +364,68 @@
             </div>
         </div>
 
+        <!--DIVIDER POSTS TEXT-->
+        <div class="subtitle">Posts</div>
 
+        <!--OTHER USER POSTS-->
+        <div class="other-user-p">
+            <div class="user-detail">
+                <div class="pfp">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\pfp-pic.jpg" class="pfp-pic">
+                </div>
+                <div class="post-details">
+                    <div class="username">Raccoon XOXO</div>
+                    <div class="post-dates">February 14 at 12:01 AM</div>
+                </div>
+            </div>
+            <div class="content">Happy Valentines eberybade! Sana may date kayo <3</div>
+            <div class="interactions">
+                <div class="like">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\like-button.png" class="interactions-img">
+                    <div class="interactions-text">Like</div>
+                </div>
+                <div class="comment">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\comment-button.png" class="interactions-img">
+                    <div class="interactions-text">Comment</div>
+                </div>
+            </div>
+            <div class="comments-tab">
+                <div class="comments-text">Comment</div>
+            </div>
+        </div>
+
+        <div class="other-user-p">
+            <div class="user-detail">
+                <div class="pfp">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\pfp-pic.jpg" class="pfp-pic">
+                </div>
+                <div class="post-details">
+                    <div class="username">Raccoon XOXO</div>
+                    <div class="post-dates">February 14 at 12:01 AM</div>
+                </div>
+            </div>
+            <div class="content">Happy Valentines eberybade! Sana may date kayo <3</div>
+            <div class="interactions">
+                <div class="like">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\like-button.png" class="interactions-img">
+                    <div class="interactions-text">Like</div>
+                </div>
+                <div class="comment">
+                    <img src="C:\Users\Rhynne Gracelle\MP UI\UI\IPT-Connectly-UI\posts\static\Images\comment-button.png" class="interactions-img">
+                    <div class="interactions-text">Comment</div>
+                </div>
+            </div>
+            <div class="comments-tab">
+                <div class="comments-text">Comment</div>
+            </div>
+        </div>
+
+    
+
+
+
+        <!--OSIAS POST FORM CODE-->
+        <!-- 
         <div class="post-form">
             <h2>Create a Post</h2>
             <form method="POST" enctype="multipart/form-data">
@@ -292,6 +435,7 @@
                 <button type="submit">Post</button>
             </form>
         </div>
+
         <h2>Posts</h2>
         {% for post in posts %}
             <div class="post">
@@ -313,6 +457,7 @@
                 {% endfor %}
             </div>
         {% endfor %}
+        -->
     </div>
 </body>
 </html>
