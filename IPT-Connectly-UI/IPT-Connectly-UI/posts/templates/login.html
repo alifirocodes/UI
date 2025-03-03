@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Load static files -->
+    {% load static %}
+    {% load socialaccount %} <!-- Added this to enable Google login -->
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Left side image -->
+        <div class="left-image">
+            <img src="{% static 'Images/connectly background v2.png' %}" alt="Background Image">
+        </div>
+
+        <!-- Right side login form -->
+        <div class="login-container">
+            <div class="login-form">
+                <h1>Welcome Back</h1>
+                <p>Today is a new day. It's your day.</p>
+                <p>Sign in to start managing your projects.</p>
+
+                <!-- Standard Login Form -->
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Enter your username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="At least 8 characters" required>
+
+                    <div class="forgot-password-container">
+                        <a href="{% url 'account_reset_password' %}">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="primary-button">Sign in</button>
+                </form>
+
+                <div class="or-container">
+                    <p>Or</p>
+                </div>
+
+                {% load socialaccount %}
+                <!-- Google Login Button -->
+                <div class="google-signin">
+                    <a href="{% provider_login_url 'google' process='login' %}?prompt=select_account">
+                        <button class="google-login">
+                            <img src="{% static 'Images/google-logo.png' %}" class="button-icon"> Sign in with Google
+                        </button>
+                    </a>
+                </div>
+
+
+                <!-- Facebook Login Button -->
+                <div class="facebook-signin">
+                    <a href="{% provider_login_url 'facebook' %}">
+                        <button class="facebook-login">
+                            <img src="{% static 'Images/facebook-logo.png' %}" class="button-icon"> Sign in with
+                            Facebook
+                        </button>
+                    </a>
+                </div>
+
+                <p>Don't have an account? <a href="{% url 'account_signup' %}">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
